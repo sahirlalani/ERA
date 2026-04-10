@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float KilledExp = 30f;
     //Current health value
     public float _currentHealth = 10.0f;
+    public AudioSource audioSource;
     //Enemy Death sound
     public AudioClip _deathSound;
 
@@ -35,6 +36,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
+        audioSource = Object.FindAnyObjectByType<AudioSource>();
     }
     
     // Start is called before the first frame update
@@ -94,6 +96,7 @@ public class Enemy : MonoBehaviour
         if (CheckIfDead())
         {
             //Destroy object
+            audioSource.PlayOneShot(_deathSound, audioSource.volume);
             Destroy(gameObject);
             playerController.EarnExp(KilledExp);
         }

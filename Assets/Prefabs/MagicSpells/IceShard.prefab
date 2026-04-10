@@ -172,10 +172,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioManager: {fileID: 0}
-  _SkillSound: {fileID: 0}
+  _SkillSound: {fileID: 8300000, guid: 99d068e859e6a3d4f96c2b981f5001c8, type: 3}
   CollisionParticle: {fileID: 5815736399323308374, guid: eebf77d94ebf54242b7da1d3fbf448d4, type: 3}
   ManaCost: 5
   SkillPower: 6
   SkillSpeed: 8
   SkillCooldown: 1.5
   SkillDuration: 12
+  Spell_Director: 1

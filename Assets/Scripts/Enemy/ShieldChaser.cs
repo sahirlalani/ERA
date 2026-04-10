@@ -8,6 +8,7 @@ public class ShieldChaser : Enemy
     public float BounceBack = 10;
     public bool HasCollided = false;
     public float SinceCollisionTime = 0f;
+    public AudioClip playerCollision;
     protected override void Start()
     {
         base.Start();
@@ -18,13 +19,13 @@ public class ShieldChaser : Enemy
     {
         base.UpdateEnemy();
 
-        if (HasCollided == true && SinceCollisionTime < 10f)
+        if (HasCollided == true && SinceCollisionTime < 8f)
         {
             SinceCollisionTime += Time.deltaTime;
             return;
         }
 
-        if (HasCollided == true && SinceCollisionTime >= 10f)
+        if (HasCollided == true && SinceCollisionTime >= 8f)
         {
             HasCollided = false;
             SinceCollisionTime = 0f;
@@ -44,6 +45,8 @@ public class ShieldChaser : Enemy
         Vector3 dir = GetDirToPlayer();
         dir.y = 0;
         //_rb.velocity = dir.normalized * BounceBack * -1;
+        audioSource.PlayOneShot(playerCollision, audioSource.volume);
+
         _rb.AddForce(dir.normalized * _enemySpeed * BounceBack * -1, ForceMode2D.Impulse);
         HasCollided = true;
     }

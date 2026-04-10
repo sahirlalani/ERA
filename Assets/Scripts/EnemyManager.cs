@@ -17,7 +17,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
         MaxSpawnedEnemies = 30;
-        spawnCooldown = 20f;
+        spawnCooldown = 15f;
     }
 
     // Update is called once per frame
