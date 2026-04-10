@@ -57,7 +57,7 @@ public class MenuController : MonoBehaviour
 
     public void ControlVolume()
     {
-        VolumeSlider.value = audioSource.volume;
+        audioSource.volume = VolumeSlider.value;
     }
     public void Resume()
     {

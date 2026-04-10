@@ -6,6 +6,8 @@ public class ShieldChaser : Enemy
 {
     public Transform trans;
     public float BounceBack = 10;
+    public bool HasCollided = false;
+    public float SinceCollisionTime = 0f;
     protected override void Start()
     {
         base.Start();
@@ -16,7 +18,22 @@ public class ShieldChaser : Enemy
     {
         base.UpdateEnemy();
 
-        SeekPlayer(GetDirToPlayer());
+        if (HasCollided == true && SinceCollisionTime < 10f)
+        {
+            SinceCollisionTime += Time.deltaTime;
+            return;
+        }
+
+        if (HasCollided == true && SinceCollisionTime >= 10f)
+        {
+            HasCollided = false;
+            SinceCollisionTime = 0f;
+        }
+
+        if (!HasCollided)
+        {
+            SeekPlayer(GetDirToPlayer());
+        }
         //Vector3 dir = GetDirToPlayer();
         //dir.y = 0;
         //_rb.AddForce(dir.normalized * _enemySpeed, ForceMode2D.Impulse);
@@ -28,5 +45,6 @@ public class ShieldChaser : Enemy
         dir.y = 0;
         //_rb.velocity = dir.normalized * BounceBack * -1;
         _rb.AddForce(dir.normalized * _enemySpeed * BounceBack * -1, ForceMode2D.Impulse);
+        HasCollided = true;
     }
 }

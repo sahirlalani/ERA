@@ -2703,7 +2703,7 @@ GameObject:
   - component: {fileID: 429688224}
   - component: {fileID: 429688227}
   - component: {fileID: 429688228}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2727,11 +2727,13 @@ MonoBehaviour:
   KilledExp: 30
   _currentHealth: 10
   _deathSound: {fileID: 0}
-  _bloodParticle: {fileID: 0}
+  _bloodParticle: {fileID: 4360137343632219632, guid: fcf26f1f98859d14293b284effdce82d, type: 3}
   _enemySpeed: 2
   _contactDamage: 0.5
   trans: {fileID: 0}
   BounceBack: 10
+  HasCollided: 0
+  SinceCollisionTime: 0
 --- !u!212 &429688225
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -86584,6 +86586,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1891827186}
     - target: {fileID: 2254613650653780508, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254613650653780508, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1891827186}
@@ -86667,9 +86673,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4863824258354659615, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863824258354659615, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4863824258354659615, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472911352045236305, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5472911352045236305, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7703098674181583034, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
       propertyPath: m_Name
       value: OptionsMenuHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 7703098674181583034, guid: 7fbcef7e51fb21d409ea12a80b97ad45, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
